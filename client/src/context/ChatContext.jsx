@@ -105,7 +105,7 @@ export const ChatContextProvider = ({ children, user }) => {
   }, [userChats]);
 
   useEffect(() => {
-    const getUsetChats = async () => {
+    const getUserChats = async () => {
       if (user?._id) {
         setIsUserChatsLoading(true);
         setUserChatsError(null);
@@ -122,8 +122,8 @@ export const ChatContextProvider = ({ children, user }) => {
       }
     };
 
-    getUsetChats();
-  }, [user]);
+    getUserChats();
+  }, [user, notifications]);
 
   useEffect(() => {
     const getMessages = async () => {
